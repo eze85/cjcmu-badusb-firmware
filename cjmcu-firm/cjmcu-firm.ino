@@ -12,7 +12,8 @@ boolean first = true;
 String DEFAULT_FILE_NAME = "script.txt"; // This is the name of the file that will be executed....
 
 void setup() {
-
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW); // I turn off the led
   if (!SD.begin(4)) {
     return;
   }
@@ -40,6 +41,7 @@ void setup() {
   }
 
   Keyboard.end();
+  digitalWrite(LED_BUILTIN, HIGH); // I turn on the led.
 }
 
 void Line(String l)
